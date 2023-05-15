@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ListLocationsController;
+use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +19,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::prefix('locations')->group(function () {
+    Route::get('/', [ListLocationsController::class, 'index']);
+    Route::get('/{id}', [ListLocationsController::class, 'show']);
+    Route::post('/', [ListLocationsController::class, 'store']);
+    Route::put('/update/{id}', [ListLocationsController::class, 'update']);
+    Route::delete('/delete/{id}', [ListLocationsController::class, 'destroy']);
+});
+Route::prefix('reviews')->group(function () {
+    Route::get('/', [ReviewsController::class, 'index']);
+    Route::get('/{id}', [ReviewsController::class, 'show']);
+    Route::post('/', [ReviewsController::class, 'store']);
+    Route::put('/update/{id}', [ReviewsController::class, 'update']);
+    Route::delete('/delete/{id}', [ReviewsController::class, 'destroy']);
 });
