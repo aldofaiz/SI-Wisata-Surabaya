@@ -6,6 +6,8 @@ use App\Http\Controllers\ListLocationsController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\UsersController;
 
+use App\Http\Controllers\API\RegisterController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,9 +19,15 @@ use App\Http\Controllers\UsersController;
 |
 */
 
+Route::controller(RegisterController::class)->group(function(){
+    Route::post('register', 'register');
+    Route::post('login', 'login');
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 Route::prefix('locations')->group(function () {
     Route::get('/', [ListLocationsController::class, 'index']);
     Route::get('/{id}', [ListLocationsController::class, 'show']);
@@ -27,6 +35,7 @@ Route::prefix('locations')->group(function () {
     Route::put('/update/{id}', [ListLocationsController::class, 'update']);
     Route::delete('/delete/{id}', [ListLocationsController::class, 'destroy']);
 });
+
 Route::prefix('reviews')->group(function () {
     Route::get('/', [ReviewsController::class, 'index']);
     Route::get('/{id}', [ReviewsController::class, 'show']);
