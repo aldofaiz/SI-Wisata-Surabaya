@@ -21,7 +21,7 @@ class LocationResource extends JsonResource
             'location_address' => $this->location_address,
             'description' => $this->description,
             'banner' => $this->banner,
-            'image' => $this->image,
+            'image' => ImagesResource::collection($this->getMedia('image')),
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
         ];

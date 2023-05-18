@@ -45,15 +45,28 @@ class LocationController extends BaseController
             'location_name' => 'required',
             'location_address' => 'required',
             'description' => 'required',
-            'banner' => 'required',
-            'image' => 'required',
+            'banner' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
    
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());       
         }
    
-        $locations = Location::create($input);
+        $locations = Location::create([
+            'location_category_id' => $request->location_category_id,
+            'location_name' => $request->location_name,
+            'location_address' => $request->location_address,
+            'description' => $request->description,
+            'banner' => $request->banner,
+            'image' => $request->image,
+        ]);
+
+        if ($image = $request->image) {
+            foreach ($image as $images) {
+                $article->addMedia($images)->toMediaCollection('image');
+            }
+        }
    
         return $this->sendResponse(new LocationResource($locations), 'Locations created successfully.');
     }
@@ -92,8 +105,8 @@ class LocationController extends BaseController
             'location_name' => 'required',
             'location_address' => 'required',
             'description' => 'required',
-            'banner' => 'required',
-            'image' => 'required'
+            'banner' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
         ]);
    
         if($validator->fails()){
@@ -107,6 +120,18 @@ class LocationController extends BaseController
         $locations->banner = $input['banner'];
         $locations->image = $input['image'];
         $locations->save();
+
+        if ($image = $request->image) {
+            $article->clearMediaCollection('image');
+            foreach ($image as $images) {
+                $article->addMedia($images)->toMediaCollection('image');
+            }
+        }
+
+        return [
+            'message' => 'Article updated successfully ',
+            'data' => new ArticleResource($article)
+        ];
    
         return $this->sendResponse(new LocationResource($locations), 'Locations updated successfully.');
     }
