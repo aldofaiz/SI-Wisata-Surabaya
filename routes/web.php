@@ -16,7 +16,7 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', [WebController::class, 'index']);
-Route::get('/wisata', [WebController::class, 'detail']);
+Route::get('/wisata/{id}', [WebController::class, 'detail']);
 Route::get('/kategori/{id}', [WebController::class, 'category']);
 
 Route::prefix('admin')->group(function () {

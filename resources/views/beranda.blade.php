@@ -87,6 +87,8 @@
     <!-- ##### Blog Wrapper Start ##### -->
     <div class="blog-wrapper section-padding-100 clearfix">
         <div class="container">
+            @foreach ($location_categories as $location_category)
+            @if( $loop->iteration%2 == 1 )
             <div class="row align-items-end">
                 <!-- Single Blog Area -->
                 <div class="col-12 col-lg-4">
@@ -94,10 +96,10 @@
                         <!-- Blog Content -->
                         <div class="single-blog-content">
                             <div class="line"></div>
-                            <a href="#" class="post-tag">Lifestyle</a>
-                            <h4><a href="#" class="post-headline">Surabaya Utara</a></h4>
-                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt. Morbi sodales, dolor id ultricies dictum</p>
-                            <a href="/kategori" class="btn original-btn">Read More</a>
+                            <a href="#" class="post-tag">Tempat Wisata</a>
+                            <h4><a href="#" class="post-headline">Surabaya {{ $location_category->name_category }}</a></h4>
+                            <p>Beberapa tempat Wisata yang dapat kamu kunjungi di Surabaya. Berikut ini adalah tempat - tempat Wisata yang ada di Surabaya {{ $location_category->name_category }}</p>
+                            <a href="/kategori/{{ $location_category->id }}" class="btn original-btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -122,6 +124,7 @@
                     </div>
                 </div>
             </div>
+            @else
             <div class="row align-items-end">                
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
@@ -149,119 +152,16 @@
                         <!-- Blog Content -->
                         <div class="single-blog-content">
                             <div class="line"></div>
-                            <a href="#" class="post-tag">Lifestyle</a>
-                            <h4><a href="#" class="post-headline">Surabaya Selatan</a></h4>
-                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt. Morbi sodales, dolor id ultricies dictum</p>
-                            <a href="/kategori" class="btn original-btn">Read More</a>
+                            <a href="#" class="post-tag">Tempat Wisata</a>
+                            <h4><a href="#" class="post-headline">Surabaya {{ $location_category->name_category }}</a></h4>
+                            <p>Beberapa tempat Wisata yang dapat kamu kunjungi di Surabaya. Berikut ini adalah tempat - tempat Wisata yang ada di Surabaya {{ $location_category->name_category }}</p>
+                            <a href="/kategori/{{ $location_category->id }}" class="btn original-btn">Read More</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row align-items-end">
-                <!-- Single Blog Area -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-blog-area clearfix mb-100">
-                        <!-- Blog Content -->
-                        <div class="single-blog-content">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">Lifestyle</a>
-                            <h4><a href="#" class="post-headline">Surabaya Pusat</a></h4>
-                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt. Morbi sodales, dolor id ultricies dictum</p>
-                            <a href="/kategori" class="btn original-btn">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/1.jpg" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">Lifestyle posts</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/2.jpg" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">latest posts</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-end">                
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/1.jpg" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">Lifestyle posts</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/2.jpg" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">latest posts</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-blog-area clearfix mb-100">
-                        <!-- Blog Content -->
-                        <div class="single-blog-content">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">Lifestyle</a>
-                            <h4><a href="#" class="post-headline">Surabaya Timur</a></h4>
-                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt. Morbi sodales, dolor id ultricies dictum</p>
-                            <a href="/kategori" class="btn original-btn">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-end">
-                <!-- Single Blog Area -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-blog-area clearfix mb-100">
-                        <!-- Blog Content -->
-                        <div class="single-blog-content">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">Lifestyle</a>
-                            <h4><a href="#" class="post-headline">Surabaya Barat</a></h4>
-                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt. Morbi sodales, dolor id ultricies dictum</p>
-                            <a href="/kategori" class="btn original-btn">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/1.jpg" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">Lifestyle posts</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/2.jpg" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">latest posts</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endif
+            @endforeach
         </div>
     </div>
     <!-- ##### Blog Wrapper End ##### -->

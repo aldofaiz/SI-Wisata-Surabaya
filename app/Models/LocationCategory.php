@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model
+class LocationCategory extends Model
 {
-    use HasFactory, Notifiable, HasApiTokens;
+    use HasFactory;
+
+    protected $table = 'location_categories';
 
     protected $fillable = [
-        'username',
-        'email',
-        'password'
+        'name_category',
+        'created_at',
     ];
 }

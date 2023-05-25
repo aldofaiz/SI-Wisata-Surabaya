@@ -2,11 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ListLocationsController;
-use App\Http\Controllers\ReviewsController;
-use App\Http\Controllers\UsersController;
-
-use App\Http\Controllers\API\RegisterController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\LocationCategoryController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,29 +16,24 @@ use App\Http\Controllers\API\RegisterController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-/*
-Route::controller(RegisterController::class)->group(function(){
-    Route::post('register', 'register');
-    Route::post('login', 'login');
-});
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-*/
 
 Route::prefix('locations')->group(function () {
-    Route::get('/', [ListLocationsController::class, 'index']);
-    Route::get('/{id}', [ListLocationsController::class, 'show']);
-    Route::post('/', [ListLocationsController::class, 'store']);
-    Route::put('/update/{id}', [ListLocationsController::class, 'update']);
-    Route::delete('/delete/{id}', [ListLocationsController::class, 'destroy']);
+    Route::get('/', [LocationController::class, 'index']);
+    Route::get('/{id}', [LocationController::class, 'show']);
+    Route::post('/', [LocationController::class, 'store']);
+    Route::put('/update/{id}', [LocationController::class, 'update']);
+    Route::delete('/delete/{id}', [LocationController::class, 'destroy']);
 });
 
-Route::prefix('reviews')->group(function () {
-    Route::get('/', [ReviewsController::class, 'index']);
-    Route::get('/{id}', [ReviewsController::class, 'show']);
-    Route::post('/', [ReviewsController::class, 'store']);
-    Route::put('/update/{id}', [ReviewsController::class, 'update']);
-    Route::delete('/delete/{id}', [ReviewsController::class, 'destroy']);
+Route::prefix('categories')->group(function (){
+    Route::get('/', [LocationCategoryController::class, 'index']);
+    // Route::get('/{id}', [LocationCategoryController::class, 'show']);
+});
+
+Route::prefix('reviews')->group(function (){
+    Route::get('/', [ReviewController::class, 'index']);
+    Route::get('/{id}', [ReviewController::class, 'show']);
+    Route::post('/', [ReviewController::class, 'store']);
+    Route::put('/update/{id}', [ReviewController::class, 'update']);
+    Route::delete('/delete/{id}', [ReviewController::class, 'destroy']);
 });

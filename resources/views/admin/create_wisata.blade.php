@@ -51,23 +51,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
 
         <div class="card-body">
-        <form action="#" method="post">
+        <form action="/api/locations/" method="post">
           {{ csrf_field() }}
           <div class="form-group">
-            <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Wisata">
+            <input type="text" id="category_id" name="category_id" class="form-control" placeholder="Kategori Lokasi">
           </div>
           <div class="form-group">
-            <textarea name="lokasi" id="lokasi" name="nama" class="form-control" placeholder="Lokasi"></textarea>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Nama Wisata">
           </div>
           <div class="form-group">
-            <input type="text" id="banner" name="banner" class="form-control" placeholder="Banner">
+            <textarea id="address" name="address" class="form-control" placeholder="Lokasi"></textarea>
           </div>
           <div class="form-group">
-            <input type="text" id="deskripsi" name="deskripsi" class="form-control" placeholder="Deskripsi">
+            <textarea id="description" name="description" class="form-control" placeholder="Deskripsi"></textarea>
           </div>
+          {{-- <div class="form-group">
+            <input type="file" id="banner" name="banner" class="form-control" placeholder="Banner">
+          </div>          
           <div class="form-group">
-            <input type="img" id="gambar" name="gambar" class="form-control" placeholder="Gambar">
-          </div>
+            <input type="file" id="image" name="image" class="form-control" placeholder="Gambar">
+          </div> --}}
           <div class="form-group">
             <button type="submit" class="btn btn-success">Simpan Data</button>
           </div>
