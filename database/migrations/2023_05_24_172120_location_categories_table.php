@@ -12,6 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         //
+        Schema::create('location_categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name_category', 255);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -20,5 +25,6 @@ return new class extends Migration
     public function down(): void
     {
         //
+        Schema::dropIfExists('location_categories');
     }
 };

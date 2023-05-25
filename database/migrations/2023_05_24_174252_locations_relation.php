@@ -12,6 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         //
+        Schema::table('locations', function (Blueprint $table) {
+            $table->unsignedBigInteger('category_id')->change();
+            $table->foreign('category_id')->references('id')->on('location_categories')
+                ->onUpdate('cascade')->onDelete('cascade');
+        });
     }
 
     /**

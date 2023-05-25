@@ -18,7 +18,7 @@ use App\Http\Controllers\API\RegisterController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
+/*
 Route::controller(RegisterController::class)->group(function(){
     Route::post('register', 'register');
     Route::post('login', 'login');
@@ -27,6 +27,7 @@ Route::controller(RegisterController::class)->group(function(){
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+*/
 
 Route::prefix('locations')->group(function () {
     Route::get('/', [ListLocationsController::class, 'index']);

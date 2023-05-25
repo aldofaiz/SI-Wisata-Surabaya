@@ -12,6 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         //
+        Schema::table('locations', function(Blueprint $table) {
+            $table->unsignedBigInteger('category_id')->after('id');
+            $table->index('category_id');
+       });
     }
 
     /**

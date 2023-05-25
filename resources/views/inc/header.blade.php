@@ -16,6 +16,40 @@
                         </div>
                     </div>
                 </div>
+                <!-- Top Social Area -->
+                <div class="col-12 col-sm-4">
+                    <div class="top-social-area">
+                        @guest
+                            @if (Route::has('login'))
+                                
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                
+                            @endif
+
+                            @if (Route::has('register'))
+                                
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                
+                            @endif
+                        @else
+                            
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->email }}
+                                </a>
+
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                            
+                        @endguest
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -25,7 +59,7 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
-                    <a href="/" class="original-logo"><img style="max-height: 150px;" src="img/core-img/sby.png" alt=""></a>
+                    <a href="/" class="original-logo"><img style="max-height: 150px;" src="{{asset('img/core-img/sby.png')}}" alt=""></a>
                 </div>
             </div>
         </div>
@@ -59,11 +93,9 @@
                                 <li><a href="/">Beranda</a></li>
                                 <li><a href="#">Kategori Lokasi</a>
                                     <ul class="dropdown">
-                                        <li><a href="/kategori">Utara</a></li>
-                                        <li><a href="/kategori">Selatan</a></li>
-                                        <li><a href="/kategori">Pusat</a></li>
-                                        <li><a href="/kategori">Timur</a></li>
-                                        <li><a href="/kategori">Barat</a></li>
+                                        @foreach ($location_categories as $location_category)
+                                        <li><a href="/kategori/{{ $location_category->id }}">{{ $location_category->name_category }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
                             </ul>

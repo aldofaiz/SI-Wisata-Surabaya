@@ -12,6 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         //
+        Schema::table('reviews', function(Blueprint $table) {
+            $table->unsignedBigInteger('location_id')->after('id');
+            $table->index('location_id');
+            $table->unsignedBigInteger('user_id')->after('id');
+            $table->index('user_id');
+       });
     }
 
     /**

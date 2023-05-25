@@ -17,11 +17,16 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [WebController::class, 'index']);
 Route::get('/wisata', [WebController::class, 'detail']);
-Route::get('/kategori', [WebController::class, 'category']);
+Route::get('/kategori/{id}', [WebController::class, 'category']);
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
-    Route::get('/data_wisata', [AdminController::class, 'dataWisata'])->name('data_wisata');
-    Route::get('/create_wisata', [AdminController::class, 'createWisata'])->name('create_wisata');
-    Route::get('/data_review', [AdminController::class, 'dataReview'])->name('data_review');
+    Route::get('/data-wisata', [AdminController::class, 'dataWisata'])->name('data_wisata');
+    Route::get('/create-wisata', [AdminController::class, 'createWisata'])->name('create_wisata');
+    Route::get('/data-location-category', [AdminController::class, 'dataLocationCategory'])->name('data_location_category');
+    Route::get('/create-location-category', [AdminController::class, 'createLocationCategory'])->name('create_location_category');
+    Route::get('/data-review', [AdminController::class, 'dataReview'])->name('data_review');
 });
+
+Auth::routes();
+

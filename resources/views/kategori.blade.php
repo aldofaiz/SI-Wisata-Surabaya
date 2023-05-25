@@ -12,10 +12,10 @@
     <title>Surabaya Utara</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('style.css')}}">
 
 </head>
 
@@ -39,7 +39,7 @@
                     <div class="single-blog-area clearfix">
                         <!-- Blog Content -->
                         <div class="single-blog-content">
-                            <h4><a href="#" class="post-headline">Surabaya Timur</a></h4>
+                            <h4><a href="#" class="post-headline">Surabaya {{ $locations->name_category }}</a></h4>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/1.jpg" alt="">
+                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
                             <a href="/wisata">Lifestyle posts</a>
@@ -58,7 +58,7 @@
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/1.jpg" alt="">
+                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
                             <a href="/wisata">Lifestyle posts</a>
@@ -68,7 +68,7 @@
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/2.jpg" alt="">
+                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
                             <a href="/wisata">latest posts</a>
@@ -78,7 +78,7 @@
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/1.jpg" alt="">
+                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
                             <a href="/wisata">Lifestyle posts</a>
@@ -88,7 +88,7 @@
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/1.jpg" alt="">
+                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
                             <a href="/wisata">Lifestyle posts</a>
@@ -98,7 +98,7 @@
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/2.jpg" alt="">
+                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
                             <a href="/wisata">latest posts</a>
@@ -115,15 +115,15 @@
     <!-- ##### Footer Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
     <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
     <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
+    <script src="{{asset('js/plugins.js')}}"></script>
     <!-- Active js -->
-    <script src="js/active.js"></script>
+    <script src="{{asset('js/active.js')}}"></script>
 
 </body>
 

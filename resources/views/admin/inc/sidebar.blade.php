@@ -38,6 +38,13 @@
                     </a>
                 </li>
                 <li class="nav-item menu-open">
+                    <a href="{{ route('data_location_category') }}" class="nav-link active">
+                    <p>
+                        Data Kategori Lokasi
+                    </p>
+                    </a>
+                </li>
+                <li class="nav-item menu-open">
                     <a href="{{ route('data_review') }}" class="nav-link active">
                     <p>
                         Data Review
