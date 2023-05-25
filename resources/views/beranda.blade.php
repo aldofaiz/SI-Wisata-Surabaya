@@ -99,7 +99,7 @@
                             <a href="#" class="post-tag">Tempat Wisata</a>
                             <h4><a href="#" class="post-headline">Surabaya {{ $location_category->name_category }}</a></h4>
                             <p>Beberapa tempat Wisata yang dapat kamu kunjungi di Surabaya. Berikut ini adalah tempat - tempat Wisata yang ada di Surabaya {{ $location_category->name_category }}</p>
-                            <a href="/kategori/{{ $location_category->id }}" class="btn original-btn">Read More</a>
+                            <a href="/kategori/{{ $location_category->id }}" class="btn original-btn">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
                             <a href="#" class="post-tag">Tempat Wisata</a>
                             <h4><a href="#" class="post-headline">Surabaya {{ $location_category->name_category }}</a></h4>
                             <p>Beberapa tempat Wisata yang dapat kamu kunjungi di Surabaya. Berikut ini adalah tempat - tempat Wisata yang ada di Surabaya {{ $location_category->name_category }}</p>
-                            <a href="/kategori/{{ $location_category->id }}" class="btn original-btn">Read More</a>
+                            <a href="/kategori/{{ $location_category->id }}" class="btn original-btn">Selengkapnya</a>
                         </div>
                     </div>
                 </div>

@@ -39,72 +39,24 @@
                     <div class="single-blog-area clearfix">
                         <!-- Blog Content -->
                         <div class="single-blog-content">
-                            <h4><a href="#" class="post-headline">Surabaya {{ $locations->name_category }}</a></h4>
+                            <h4><a href="#" class="post-headline">Surabaya {{ $location_category->name_category }}</a></h4>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row align-items-end">
+                @foreach ($locations as $location)
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-catagory-area clearfix mb-100">
                         <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
-                            <a href="/wisata">Lifestyle posts</a>
+                            <a href="/wisata/{{ $location->id }}">{{ $location->name }}</a>
                         </div>
                     </div>
                 </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">Lifestyle posts</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">latest posts</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">Lifestyle posts</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">Lifestyle posts</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">latest posts</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

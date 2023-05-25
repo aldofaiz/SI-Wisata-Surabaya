@@ -12,12 +12,12 @@
     <title>Tempat Wisata - Pasar Wonokromo</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{{asset('img/core-img/favicon.icos')}}">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('style.css')}}">
     <!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 
 </head>
 
@@ -34,12 +34,12 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/b1.jpg);">
+    <div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/b1.jpg')}});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcumb-content text-center">
-                        <h2>Pasar Wonokromo</h2>
+                        <h2>{{ $location->name }}</h2>
                     </div>
                 </div>
             </div>
@@ -57,8 +57,8 @@
                         <!-- Blog Content -->
                         <div class="single-blog-content">
                             <div class="line"></div>
-                            <a href="#" class="post-tag">Surabaya Pusat</a>
-                            <h4><a href="#" class="post-headline">Pasar Wonokromo</a></h4>
+                            <a href="#" class="post-tag">{{ $location->address }}</a>
+                            <h4><a href="#" class="post-headline">{{ $location->name }}</a></h4>
                             <p class="mb-3">Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt. Morbi sodales, dolor id ultricies dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus velit ullamcorper id. Quisque at erat eu libero consequat tempus.slacus sit amet augue sodales, vel cursus enim tristique.</p>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/1.jpg" alt="">
+                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
                             <a href="#">Lifestyle posts</a>
@@ -95,8 +95,8 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area blog-style-2 mb-100">
                         <div class="single-blog-thumbnail">
-                            <a href="img/blog-img/4.jpg" class="image-popup img-portfolio-detail">
-                                <img src="img/blog-img/4.jpg" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
+                            <a href="{{asset('img/blog-img/4.jpg')}}" class="image-popup img-portfolio-detail">
+                                <img src="{{asset('img/blog-img/4.jpg')}}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
                             </a>
                         </div>
                     </div>
@@ -105,8 +105,8 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area blog-style-2 mb-100">
                         <div class="single-blog-thumbnail">
-                            <a href="img/blog-img/5.jpg" class="image-popup img-portfolio-detail">
-                                <img src="img/blog-img/5.jpg" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
+                            <a href="{{asset('img/blog-img/5.jpg')}}" class="image-popup img-portfolio-detail">
+                                <img src="{{asset('img/blog-img/5.jpg')}}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
                             </a>
                         </div>
                     </div>
@@ -115,8 +115,8 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area blog-style-2 mb-100">
                         <div class="single-blog-thumbnail">
-                            <a href="img/blog-img/6.jpg" class="image-popup img-portfolio-detail">
-                                <img src="img/blog-img/6.jpg" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
+                            <a href="{{asset('img/blog-img/6.jpg')}}" class="image-popup img-portfolio-detail">
+                                <img src="{{asset('img/blog-img/6.jpg')}}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
                             </a>
                         </div>
                     </div>
@@ -125,8 +125,8 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area blog-style-2 mb-100">
                         <div class="single-blog-thumbnail">
-                            <a href="img/blog-img/6.jpg" class="image-popup img-portfolio-detail">
-                                <img src="img/blog-img/6.jpg" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
+                            <a href="{{asset('img/blog-img/6.jpg')}}" class="image-popup img-portfolio-detail">
+                                <img src="{{asset('img/blog-img/6.jpg')}}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
                             </a>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                             <div class="comment-content d-flex">
                                 <!-- Comment Author -->
                                 <div class="comment-author">
-                                    <img src="img/bg-img/b7.jpg" alt="author">
+                                    <img src="{{asset('img/bg-img/b7.jpg')}}" alt="author">
                                 </div>
                                 <!-- Comment Meta -->
                                 <div class="comment-meta">
@@ -167,7 +167,7 @@
                             <div class="comment-content d-flex">
                                 <!-- Comment Author -->
                                 <div class="comment-author">
-                                    <img src="img/bg-img/b7.jpg" alt="author">
+                                    <img src="{{asset('img/bg-img/b7.jpg')}}" alt="author">
                                 </div>
                                 <!-- Comment Meta -->
                                 <div class="comment-meta">
@@ -216,18 +216,18 @@
     <!-- ##### Footer Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
     <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
     <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
+    <script src="{{asset('js/plugins.js')}}"></script>
     <!-- Active js -->
-    <script src="js/active.js"></script>
+    <script src="{{asset('js/active.js')}}"></script>
     <!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
+	<script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
+	<script src="{{asset('js/magnific-popup-options.js')}}"></script>
 
 </body>
 

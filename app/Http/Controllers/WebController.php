@@ -17,14 +17,19 @@ class WebController extends Controller
     {
         $location_categories = DB::table('location_categories')->get();
         $location = DB::table('locations')->where('id', '=', $id)->first();
-        return view('wisata',compact('location_categories','locations'));
+        return view('wisata',compact('location_categories','location'));
     }
 
     public function category($id)
     {
         $location_categories = DB::table('location_categories')->get();
         $location_category = DB::table('location_categories')->where('id', '=', $id)->first();
+        $locations = DB::table('locations')
+        ->join('location_categories', 'locations.category_id', '=', 'location_categories.id')
+        ->select('locations.*', 'location_categories.name_category')
+        ->where('location_categories.id', '=', $id)
+        ->get();
         //return dd($locations);
-        return view('kategori',compact('location_categories','location_category'));
+        return view('kategori',compact('location_categories','location_category','locations'));
     }
 }
