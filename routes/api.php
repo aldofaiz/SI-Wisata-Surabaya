@@ -27,7 +27,7 @@ Route::prefix('locations')->group(function () {
 
 Route::prefix('categories')->group(function (){
     Route::get('/', [LocationCategoryController::class, 'index']);
-    // Route::get('/{id}', [LocationCategoryController::class, 'show']);
+    Route::get('/{id}', [LocationCategoryController::class, 'show']);
 });
 
 Route::prefix('reviews')->group(function (){

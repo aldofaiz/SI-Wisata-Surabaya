@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use app\Model\Location;
 
 class LocationCategory extends Model
 {
@@ -15,4 +16,9 @@ class LocationCategory extends Model
         'name_category',
         'created_at',
     ];
+
+    public function locations()
+    {
+        return $this->hasMany(Location::class);
+    }
 }

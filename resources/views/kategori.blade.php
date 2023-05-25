@@ -52,7 +52,7 @@
                         <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
-                            <a href="/wisata/{{ $location->id }}">{{ $location->name }}</a>
+                            <a href="/wisata/{{ $location->id }}">{{ $location->location_name }}</a>
                         </div>
                     </div>
                 </div>

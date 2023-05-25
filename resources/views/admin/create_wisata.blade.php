@@ -54,10 +54,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <form action="/api/locations/" method="post">
           {{ csrf_field() }}
           <div class="form-group">
-            <input type="text" id="category_id" name="category_id" class="form-control" placeholder="Kategori Lokasi">
+            {{-- <input type="text" id="category_id" name="category_id" class="form-control" placeholder="Kategori Lokasi"> --}}
+            <select class="form-control" id="category_id" name="category_id">
+              @foreach ($location_categories as $location_category)
+                <option  value="{{ $location_category->id }}">{{ $location_category->name_category }}</option>
+              @endforeach
+            </select>
           </div>
           <div class="form-group">
-            <input type="text" id="name" name="name" class="form-control" placeholder="Nama Wisata">
+            <input type="text" id="location_name" name="location_name" class="form-control" placeholder="Nama Wisata">
           </div>
           <div class="form-group">
             <textarea id="address" name="address" class="form-control" placeholder="Lokasi"></textarea>
@@ -65,12 +70,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="form-group">
             <textarea id="description" name="description" class="form-control" placeholder="Deskripsi"></textarea>
           </div>
-          {{-- <div class="form-group">
-            <input type="file" id="banner" name="banner" class="form-control" placeholder="Banner">
+          <div class="form-group">
+            <input type="text" id="banner" name="banner" class="form-control" placeholder="Banner">
           </div>          
           <div class="form-group">
-            <input type="file" id="image" name="image" class="form-control" placeholder="Gambar">
-          </div> --}}
+            <input type="text" id="image" name="image" class="form-control" placeholder="Gambar">
+          </div>
+          <div class="form-group">
+            <input type="text" id="image2" name="image2" class="form-control" placeholder="Gambar">
+          </div>
+          <div class="form-group">
+            <input type="text" id="image3" name="image3" class="form-control" placeholder="Gambar">
+          </div>
           <div class="form-group">
             <button type="submit" class="btn btn-success">Simpan Data</button>
           </div>

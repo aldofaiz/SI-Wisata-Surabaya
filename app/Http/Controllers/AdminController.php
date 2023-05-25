@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-// use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Http;
 
 class AdminController extends Controller
 {
@@ -20,20 +20,20 @@ class AdminController extends Controller
 
     public function dataWisata()
     {
-        return view('admin.data_wisata');
+        $locations = DB::table('locations')->get();
+        return view('admin.data_wisata', compact('locations'));
     }
 
     public function createWisata()
     {
-        return view('admin.create_wisata');
+        $location_categories = DB::table('location_categories')->get();
+        return view('admin.create_wisata', compact('location_categories'));
     }
 
     public function dataLocationCategory()
     {
-        //$location_category = Http::get('http://localhost/api/locations');
-        $location_category = DB::table('location_category')->get();
-        return dd($location_category);
-        //return view('admin.data_location_category',compact($location_category));
+        $location_categories = DB::table('location_categories')->get();
+        return view('admin.data_location_category',compact('location_categories'));
     }
 
     public function createLocationCategory()
@@ -43,6 +43,12 @@ class AdminController extends Controller
 
     public function dataReview()
     {
-        return view('admin.data_review');
+        $reviews = DB::table('reviews')
+        ->join('locations', 'reviews.location_id', '=', 'locations.id')
+        ->join('users', 'reviews.user_id', '=', 'users.id')
+        ->select('reviews.*', 'locations.location_name', 'users.name')
+        ->get();
+        // return dd($reviews);
+        return view('admin.data_review', compact('reviews'));
     }
 }

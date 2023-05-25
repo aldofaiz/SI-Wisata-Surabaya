@@ -35,27 +35,31 @@ class LocationController extends Controller
         //
         $this->validate($request,[
             'category_id' => 'required',
-            'name' => 'required',
+            'location_name' => 'required',
             'address' => 'required',
             'description' => 'required',
-            // 'banner' => 'required',
-            // 'image' => 'required',
+            'banner' => 'required',
+            'image' => 'required',
+            'image2' => 'required',
+            'image3' => 'required',
         ]);
 
         $location = Location::create([
             'category_id' => $request->category_id,
-            'name' => $request->name,
+            'location_name' => $request->location_name,
             'address' => $request->address,
             'description' => $request->description,
-            // 'banner' => $request->banner,
-            // 'image' => $request->image,
+            'banner' => $request->banner,
+            'image' => $request->image,
+            'image2' => $request->image2,
+            'image3' => $request->image3,
         ]);
   
         // if($request->hasFile('image') && $request->file('image')->isValid()){
         //     $location->addMediaFromRequest('image')->toMediaCollection('images');
         // }
         
-        //return response()->json($location);
+        // return response()->json($location);
         return redirect()->route('data_wisata');
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 // use Spatie\MediaLibrary\InteractsWithMedia;
 // use Spatie\MediaLibrary\HasMedia;
+use app\Model\LocationCategory;
 
 class Location extends Model //implements HasMedia
 {
@@ -14,11 +15,18 @@ class Location extends Model //implements HasMedia
 
     protected $fillable = [
         'category_id',
-        'name',
+        'location_name',
         'address',
         'description',
-        // 'banner',
-        // 'image',
-        //'created_at',
+        'banner',
+        'image',
+        'image2',
+        'image3',
+        // 'created_at',
     ];
+
+    public function locationCategory()
+    {
+        return $this->belongsTo(LocationCategory::class);
+    }
 }

@@ -46,24 +46,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Main content -->
     <div class="content">
-      <div class="card card-info card-outline">
-        <div class="card-header">
-            <div class="card-tools">
-                <a href="{{ route('create_location_category') }}" class="btn btn-success">Tambah Data <i class="fas fa-plus-square"></i></a>
-            </div>
-        </div>
-
+      <div class="card card-info card-outline">      
         <div class="card-body">
             <table class="table table-bordered">
                 <tr>
                     <th>No</th>
                     <th>Nama Kategori</th>
                 </tr>
+                @foreach ($location_categories as $location_category)
                 <tr>
-                    <td>nama_wisata</td>
-                    <td>lokasi</td>
+                    <td>{{ $location_category->id }}</td>
+                    <td>{{ $location_category->name_category }}</td>
                 </tr>
-
+                @endforeach
             </table>
         </div>
       </div>

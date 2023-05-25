@@ -34,12 +34,12 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/b1.jpg')}});">
+    <div class="breadcumb-area bg-img" style="background-image: url({{ $location->banner }});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcumb-content text-center">
-                        <h2>{{ $location->name }}</h2>
+                        <h2>{{ $location->location_name }}</h2>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                         <div class="single-blog-content">
                             <div class="line"></div>
                             <a href="#" class="post-tag">{{ $location->address }}</a>
-                            <h4><a href="#" class="post-headline">{{ $location->name }}</a></h4>
+                            <h4><a href="#" class="post-headline">{{ $location->location_name }}</a></h4>
                             <p class="mb-3">Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt. Morbi sodales, dolor id ultricies dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus velit ullamcorper id. Quisque at erat eu libero consequat tempus.slacus sit amet augue sodales, vel cursus enim tristique.</p>
                         </div>
                     </div>
@@ -75,10 +75,10 @@
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-catagory-area clearfix mb-100">
-                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
+                        <img src="{{ $location->image }}" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
-                            <a href="#">Lifestyle posts</a>
+                            <a href="#">{{ $location->location_name }}</a>
                         </div>
                     </div>
                 </div>
@@ -95,8 +95,8 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area blog-style-2 mb-100">
                         <div class="single-blog-thumbnail">
-                            <a href="{{asset('img/blog-img/4.jpg')}}" class="image-popup img-portfolio-detail">
-                                <img src="{{asset('img/blog-img/4.jpg')}}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
+                            <a href="{{ $location->image }}" class="image-popup img-portfolio-detail">
+                                <img src="{{ $location->image }}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
                             </a>
                         </div>
                     </div>
@@ -105,8 +105,8 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area blog-style-2 mb-100">
                         <div class="single-blog-thumbnail">
-                            <a href="{{asset('img/blog-img/5.jpg')}}" class="image-popup img-portfolio-detail">
-                                <img src="{{asset('img/blog-img/5.jpg')}}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
+                            <a href="{{ $location->image2 }}" class="image-popup img-portfolio-detail">
+                                <img src="{{ $location->image2 }}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
                             </a>
                         </div>
                     </div>
@@ -115,18 +115,8 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area blog-style-2 mb-100">
                         <div class="single-blog-thumbnail">
-                            <a href="{{asset('img/blog-img/6.jpg')}}" class="image-popup img-portfolio-detail">
-                                <img src="{{asset('img/blog-img/6.jpg')}}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area  -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area blog-style-2 mb-100">
-                        <div class="single-blog-thumbnail">
-                            <a href="{{asset('img/blog-img/6.jpg')}}" class="image-popup img-portfolio-detail">
-                                <img src="{{asset('img/blog-img/6.jpg')}}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
+                            <a href="{{ $location->image3 }}" class="image-popup img-portfolio-detail">
+                                <img src="{{ $location->image3 }}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
                             </a>
                         </div>
                     </div>
@@ -144,61 +134,50 @@
                     <h5 class="title">Review</h5>
 
                     <ol>
+                        @foreach ($reviews as $review)
                         <!-- Single Comment Area -->
                         <li class="single_comment_area">
                             <!-- Comment Content -->
                             <div class="comment-content d-flex">
                                 <!-- Comment Author -->
                                 <div class="comment-author">
-                                    <img src="{{asset('img/bg-img/b7.jpg')}}" alt="author">
+                                    <img src="{{asset('img/bg-img/user.png')}}" alt="User">
                                 </div>
                                 <!-- Comment Meta -->
                                 <div class="comment-meta">
-                                    <a href="#" class="post-date">March 12</a>
-                                    <p><a href="#" class="post-author">William James</a></p>
-                                    <p>Efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
+                                    <a href="#" class="post-date">{{ \Carbon\Carbon::parse($review->created_at)->format('M d Y')}}</a>
+                                    <p><a href="#" class="post-author">{{ $review->name }}</a></p>
+                                    <p>{{ $review->review }}</p>
                                 </div>
                             </div>
-                        </li>
+                        </li>                            
+                        @endforeach
 
-                        <!-- Single Comment Area -->
-                        <li class="single_comment_area">
-                            <!-- Comment Content -->
-                            <div class="comment-content d-flex">
-                                <!-- Comment Author -->
-                                <div class="comment-author">
-                                    <img src="{{asset('img/bg-img/b7.jpg')}}" alt="author">
-                                </div>
-                                <!-- Comment Meta -->
-                                <div class="comment-meta">
-                                    <a href="#" class="post-date">March 12</a>
-                                    <p><a href="#" class="post-author">William James</a></p>
-                                    <p>Efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
-                                </div>
-                            </div>
-                        </li>
+                        
                     </ol>
                 </div>
-
-                                 
+            </div>
+            @auth
+            <div class="row">                   
                 <div class="post-a-comment-area mt-70">
                     <!-- Reply Form -->
-                    <form action="#" method="post">
+                    <form action="/api/reviews/" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="group">
-                                    <input type="text" name="subject" id="subject" required>
+                                    <input type="hidden" name="location_id" id="location_id" value="{{ $location->id }}">
+                                    <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id }}">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="group">
-                                    <textarea name="message" id="message" required></textarea>
+                                    <textarea name="review" id="review"></textarea>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Comment</label>
+                                    <label>Reviews</label>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -208,6 +187,7 @@
                     </form>
                 </div>
             </div>
+            @endauth
         </div>
     </div>
 

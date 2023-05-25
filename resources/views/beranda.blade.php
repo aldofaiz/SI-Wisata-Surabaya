@@ -35,51 +35,23 @@
     <div class="hero-area">
         <!-- Hero Slides Area -->
         <div class="hero-slides owl-carousel">
+            @foreach ($reviews as $review)
             <!-- Single Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/b2.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image: url({{ $review->banner }});">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="slide-content text-center">
                                 <div class="post-tag">
-                                    <a href="#" data-animation="fadeInUp">lifestyle</a>
+                                    <a href="/wisata/{{ $review->location_id }}" data-animation="fadeInUp">{{ $review->location_name }}</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night’s party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="/wisata/{{ $review->location_id }}">{{ \Illuminate\Support\Str::limit($review->review, 20, $end='...') }}</a></h2>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Single Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url('https://assets-a1.kompasiana.com/items/album/2018/06/09/pasar-wonokromo-5b1bf532ab12ae219906a0c2.jpg');">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="slide-content text-center">
-                                <div class="post-tag">
-                                    <a href="#" data-animation="fadeInUp">Pasar Wonokromo</a>
-                                </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">" Banyak Penjual Sayur - Sayuran "</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/b3.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="slide-content text-center">
-                                <div class="post-tag">
-                                    <a href="#" data-animation="fadeInUp">lifestyle</a>
-                                </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night’s party!</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <!-- ##### Hero Area End ##### -->
@@ -109,7 +81,7 @@
                         <img src="img/blog-img/1.jpg" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
-                            <a href="/wisata">Lifestyle posts</a>
+                            <a href="/wisata">latest posts</a>
                         </div>
                     </div>
                 </div>

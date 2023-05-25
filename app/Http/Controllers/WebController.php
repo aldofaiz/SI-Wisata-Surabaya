@@ -10,14 +10,20 @@ class WebController extends Controller
     public function index()
     {
         $location_categories = DB::table('location_categories')->get();
-        return view('beranda',compact('location_categories'));
+        $reviews = DB::table('reviews')->join('locations', 'reviews.location_id', '=', 'locations.id')
+        ->select('reviews.*', 'locations.banner', 'locations.location_name')->inRandomOrder()->get();
+        return view('beranda',compact('location_categories', 'reviews'));
     }
 
     public function detail($id)
     {
         $location_categories = DB::table('location_categories')->get();
         $location = DB::table('locations')->where('id', '=', $id)->first();
-        return view('wisata',compact('location_categories','location'));
+        $reviews = DB::table('reviews')->join('locations', 'reviews.location_id', '=', 'locations.id')
+        ->join('users', 'reviews.user_id', '=', 'users.id')
+        ->select('reviews.*', 'locations.location_name', 'users.name')
+        ->where('reviews.location_id', '=', $id)->get();
+        return view('wisata',compact('location_categories','location','reviews'));
     }
 
     public function category($id)

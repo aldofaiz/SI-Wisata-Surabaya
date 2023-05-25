@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\LocationCategory;
-use App\Http\Requests\StoreLocationCategoryRequest;
-use App\Http\Requests\UpdateLocationCategoryRequest;
+use Illuminate\Http\Request;
+// use App\Http\Requests\StoreLocationCategoryRequest;
+// use App\Http\Requests\UpdateLocationCategoryRequest;
 
 class LocationCategoryController extends Controller
 {
@@ -29,9 +30,9 @@ class LocationCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLocationCategoryRequest $request)
+    public function store(Request $request)
     {
-        //
+    
     }
 
     /**
@@ -55,7 +56,7 @@ class LocationCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateLocationCategoryRequest $request, LocationCategory $locationCategory)
+    public function update(Request $request, LocationCategory $locationCategory)
     {
         //
     }

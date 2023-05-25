@@ -51,19 +51,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="card-body">
             <table class="table table-bordered">
                 <tr>
+                    <th>ID</th>
+                    <th>Nama User</th>
+                    <th>Nama Tempat Wisata</th>
                     <th>Review</th>
-                    <th>review</th>
-                    <th>review</th>
-                    <th>review</th>
-                    <th>review</th>
                 </tr>
+                @foreach ($reviews as $review)
                 <tr>
-                    <td>Review</td>
-                    <td>review</td>
-                    <td>review</td>
-                    <td>review</td>
-                    <td>review</td>
+                    <td>{{ $review->id }}</td>
+                    <td>{{ $review->name }}</td>
+                    <td>{{ $review->location_name }}</td>
+                    <td>{{ $review->review }}</td>
                 </tr>
+                @endforeach
 
             </table>
         </div>

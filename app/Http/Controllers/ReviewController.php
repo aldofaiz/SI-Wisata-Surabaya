@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
-use App\Http\Requests\StoreReviewRequest;
-use App\Http\Requests\UpdateReviewRequest;
+use Illuminate\Http\Request;
+// use App\Http\Requests\StoreReviewRequest;
+// use App\Http\Requests\UpdateReviewRequest;
 
 class ReviewController extends Controller
 {
@@ -29,7 +30,7 @@ class ReviewController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreReviewRequest $request)
+    public function store(Request $request)
     {
         //
         $this->validate($request,[
@@ -43,7 +44,8 @@ class ReviewController extends Controller
             'user_id' => $request->user_id,
             'review' => $request->review,
         ]);
-        return response()->json($review);
+        // return response()->json($review);
+        return redirect()->back();
     }
 
     /**
@@ -67,7 +69,7 @@ class ReviewController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateReviewRequest $request, Review $id)
+    public function update(Request $request, Review $id)
     {
         //
         $this->validate($request,[

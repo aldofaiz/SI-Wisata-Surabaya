@@ -56,20 +56,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="card-body">
             <table class="table table-bordered">
                 <tr>
-                    <th>nama_wisata</th>
-                    <th>lokasi</th>
-                    <th>banner</th>
-                    <th>deskripsi</th>
-                    <th>gambar</th>
+                    <th>ID</th>
+                    <th>Nama Wisata</th>
+                    <th>Lokasi</th>
+                    <th>Deskripsi</th>
+                    <th>Banner</th>
+                    <th>Gambar 1</th>
+                    <th>Gambar 2</th>
+                    <th>Gambar 3</th>
                 </tr>
+                @foreach ($locations as $location)
                 <tr>
-                    <td>nama_wisata</td>
-                    <td>lokasi</td>
-                    <td>banner</td>
-                    <td>deskripsi</td>
-                    <td>gambar</td>
+                    <td>{{ $location->id }}</td>
+                    <td>{{ $location->location_name }}</td>
+                    <td>{{ $location->address }}</td>
+                    <td>{{ $location->description }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($location->banner, 10, $end='...') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($location->image, 10, $end='...') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($location->image2, 10, $end='...') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($location->image3, 10, $end='...') }}</td>
                 </tr>
-
+                @endforeach
             </table>
         </div>
       </div>
