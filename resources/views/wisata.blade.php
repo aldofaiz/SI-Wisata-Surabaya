@@ -59,7 +59,7 @@
                             <div class="line"></div>
                             <a href="#" class="post-tag">{{ $location->address }}</a>
                             <h4><a href="#" class="post-headline">{{ $location->location_name }}</a></h4>
-                            <p class="mb-3">Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt. Morbi sodales, dolor id ultricies dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus velit ullamcorper id. Quisque at erat eu libero consequat tempus.slacus sit amet augue sodales, vel cursus enim tristique.</p>
+                            <p class="mb-3">{{ substr($location->description, 0,  strlen($location->description)/2) }}</p>
                         </div>
                     </div>
                 </div>
@@ -68,14 +68,14 @@
                     <div class="single-blog-area clearfix mb-100">
                         <!-- Blog Content -->
                         <div class="single-blog-content">
-                            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus velit ullamcorper id. Quisque at erat eu libero consequat tempus. Quisque molestie convallis tempus. Ut semper purus metus, a euismod sapien sodales ac. Duis viverra eleifend fermentum. Donec sagittis lacus sit amet augue sodales, vel cursus enim tristique. Maecenas vitae massa ut est consectetur sagittis quis vitae tortor.</p>
+                            <p class="mb-3">{{ substr($location->description, strlen($location->description)/2,  (strlen($location->description)/2)+1) }}</p>
                         </div>
                     </div>
                 </div>
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-catagory-area clearfix mb-100">
-                        <img src="{{ $location->image }}" alt="">
+                        <img src="{{ $location->banner }}" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
                             <a href="#">{{ $location->location_name }}</a>
@@ -96,7 +96,7 @@
                     <div class="single-blog-area blog-style-2 mb-100">
                         <div class="single-blog-thumbnail">
                             <a href="{{ $location->image }}" class="image-popup img-portfolio-detail">
-                                <img src="{{ $location->image }}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
+                                <img style="height: 200px;" src="{{ $location->image }}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
                             </a>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                     <div class="single-blog-area blog-style-2 mb-100">
                         <div class="single-blog-thumbnail">
                             <a href="{{ $location->image2 }}" class="image-popup img-portfolio-detail">
-                                <img src="{{ $location->image2 }}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
+                                <img style="height: 200px;" src="{{ $location->image2 }}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
                             </a>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                     <div class="single-blog-area blog-style-2 mb-100">
                         <div class="single-blog-thumbnail">
                             <a href="{{ $location->image3 }}" class="image-popup img-portfolio-detail">
-                                <img src="{{ $location->image3 }}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
+                                <img style="height: 200px;" src="{{ $location->image3 }}" alt="Free HTML5 Template by FreeHTML5.co" class="img-responsive">
                             </a>
                         </div>
                     </div>

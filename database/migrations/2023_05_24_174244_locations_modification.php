@@ -13,8 +13,8 @@ return new class extends Migration
     {
         //
         Schema::table('locations', function(Blueprint $table) {
-            $table->unsignedBigInteger('category_id')->after('id');
-            $table->index('category_id');
+            $table->unsignedBigInteger('location_category_id')->after('id');
+            $table->index('location_category_id');
        });
     }
 

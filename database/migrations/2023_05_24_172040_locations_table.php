@@ -15,12 +15,12 @@ return new class extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->string('location_name', 255);
-            $table->text('location_address');
-            $table->text('location_description');
-            $table->string('location_banner', 255);
-            $table->string('location_image1', 255);
-            $table->string('location_image2', 255);
-            $table->string('location_image3', 255);
+            $table->text('address');
+            $table->text('description');
+            $table->string('banner', 255);
+            $table->string('image1', 255);
+            $table->string('image2', 255);
+            $table->string('image3', 255);
             $table->timestamps();
         });
     }

@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\LocationCategory;
 
 class WebController extends Controller
 {
     public function index()
     {
-        $location_categories = DB::table('location_categories')->get();
+        $location_categories = LocationCategory::all();
         $reviews = DB::table('reviews')->join('locations', 'reviews.location_id', '=', 'locations.id')
         ->select('reviews.*', 'locations.banner', 'locations.location_name')->inRandomOrder()->get();
         return view('beranda',compact('location_categories', 'reviews'));
@@ -31,7 +32,7 @@ class WebController extends Controller
         $location_categories = DB::table('location_categories')->get();
         $location_category = DB::table('location_categories')->where('id', '=', $id)->first();
         $locations = DB::table('locations')
-        ->join('location_categories', 'locations.category_id', '=', 'location_categories.id')
+        ->join('location_categories', 'locations.location_category_id', '=', 'location_categories.id')
         ->select('locations.*', 'location_categories.name_category')
         ->where('location_categories.id', '=', $id)
         ->get();

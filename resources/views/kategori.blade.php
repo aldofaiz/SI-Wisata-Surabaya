@@ -49,7 +49,7 @@
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-catagory-area clearfix mb-100">
-                        <img src="{{asset('img/blog-img/1.jpg')}}" alt="">
+                        <img style="height: 250px;" src="{{ $location->banner }}" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
                             <a href="/wisata/{{ $location->id }}">{{ $location->location_name }}</a>

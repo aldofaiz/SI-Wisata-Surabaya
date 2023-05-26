@@ -45,7 +45,7 @@
                                 <div class="post-tag">
                                     <a href="/wisata/{{ $review->location_id }}" data-animation="fadeInUp">{{ $review->location_name }}</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="/wisata/{{ $review->location_id }}">{{ \Illuminate\Support\Str::limit($review->review, 20, $end='...') }}</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="/wisata/{{ $review->location_id }}">"{{ \Illuminate\Support\Str::limit($review->review, 20, $end='...') }}"</a></h2>
                             </div>
                         </div>
                     </div>
@@ -75,49 +75,39 @@
                         </div>
                     </div>
                 </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/1.jpg" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">latest posts</a>
+                @foreach ($location_category->locations as $location)
+                @if ($loop->iteration > 2)
+                    @break
+                @endif
+                    <!-- Single Blog Area -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-catagory-area clearfix mb-100">
+                            <img style="height: 250px;" src="{{ $location->banner }}" alt="">
+                            <!-- Catagory Title -->
+                            <div class="catagory-title">
+                                <a href="/wisata/{{ $location->id }}">{{ $location->location_name }}</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/2.jpg" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">latest posts</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             @else
-            <div class="row align-items-end">                
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/1.jpg" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">Lifestyle posts</a>
+            <div class="row align-items-end">   
+                @foreach ($location_category->locations as $location)
+                @if ($loop->iteration > 2)
+                    @break
+                @endif
+                    <!-- Single Blog Area -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-catagory-area clearfix mb-100">
+                            <img style="height: 250px;" src="{{ $location->banner }}" alt="">
+                            <!-- Catagory Title -->
+                            <div class="catagory-title">
+                                <a href="/wisata/{{ $location->id }}">{{ $location->location_name }}</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix mb-100">
-                        <img src="img/blog-img/2.jpg" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="/wisata">latest posts</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <!-- Single Blog Area -->
                 <div class="col-12 col-lg-4">
                     <div class="single-blog-area clearfix mb-100">

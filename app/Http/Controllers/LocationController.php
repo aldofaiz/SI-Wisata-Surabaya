@@ -34,7 +34,7 @@ class LocationController extends Controller
     {
         //
         $this->validate($request,[
-            'category_id' => 'required',
+            'location_category_id' => 'required',
             'location_name' => 'required',
             'address' => 'required',
             'description' => 'required',
@@ -45,7 +45,7 @@ class LocationController extends Controller
         ]);
 
         $location = Location::create([
-            'category_id' => $request->category_id,
+            'location_category_id' => $request->location_category_id,
             'location_name' => $request->location_name,
             'address' => $request->address,
             'description' => $request->description,

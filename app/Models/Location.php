@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 // use Spatie\MediaLibrary\InteractsWithMedia;
 // use Spatie\MediaLibrary\HasMedia;
-use app\Model\LocationCategory;
+use App\Models\LocationCategory;
 
 class Location extends Model //implements HasMedia
 {
@@ -14,7 +14,7 @@ class Location extends Model //implements HasMedia
     use HasFactory;
 
     protected $fillable = [
-        'category_id',
+        'location_category_id',
         'location_name',
         'address',
         'description',
