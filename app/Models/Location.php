@@ -4,13 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-// use Spatie\MediaLibrary\InteractsWithMedia;
-// use Spatie\MediaLibrary\HasMedia;
 use App\Models\LocationCategory;
 
-class Location extends Model //implements HasMedia
+class Location extends Model 
 {
-    //use HasFactory, InteractsWithMedia;
     use HasFactory;
 
     protected $fillable = [
@@ -22,7 +19,6 @@ class Location extends Model //implements HasMedia
         'image',
         'image2',
         'image3',
-        // 'created_at',
     ];
 
     public function locationCategory()

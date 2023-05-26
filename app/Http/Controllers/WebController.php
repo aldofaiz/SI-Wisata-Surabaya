@@ -36,7 +36,6 @@ class WebController extends Controller
         ->select('locations.*', 'location_categories.name_category')
         ->where('location_categories.id', '=', $id)
         ->get();
-        //return dd($locations);
         return view('kategori',compact('location_categories','location_category','locations'));
     }
 }

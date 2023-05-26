@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Review;
 use Illuminate\Http\Request;
-// use App\Http\Requests\StoreReviewRequest;
-// use App\Http\Requests\UpdateReviewRequest;
 
 class ReviewController extends Controller
 {
@@ -44,7 +42,6 @@ class ReviewController extends Controller
             'user_id' => $request->user_id,
             'review' => $request->review,
         ]);
-        // return response()->json($review);
         return redirect()->back();
     }
 

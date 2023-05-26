@@ -54,7 +54,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <form action="/api/locations/" method="post">
           {{ csrf_field() }}
           <div class="form-group">
-            {{-- <input type="text" id="category_id" name="category_id" class="form-control" placeholder="Kategori Lokasi"> --}}
             <select class="form-control" id="location_category_id" name="location_category_id">
               @foreach ($location_categories as $location_category)
                 <option  value="{{ $location_category->id }}">{{ $location_category->name_category }}</option>

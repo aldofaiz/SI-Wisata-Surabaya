@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Location;
 use Illuminate\Http\Request;
-// use App\Http\Requests\StoreLocationRequest;
-// use App\Http\Requests\UpdateLocationRequest;
 
 class LocationController extends Controller
 {
@@ -55,11 +53,6 @@ class LocationController extends Controller
             'image3' => $request->image3,
         ]);
   
-        // if($request->hasFile('image') && $request->file('image')->isValid()){
-        //     $location->addMediaFromRequest('image')->toMediaCollection('images');
-        // }
-        
-        // return response()->json($location);
         return redirect()->route('data_wisata');
     }
 

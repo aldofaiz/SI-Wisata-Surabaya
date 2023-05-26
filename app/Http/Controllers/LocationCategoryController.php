@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\LocationCategory;
 use Illuminate\Http\Request;
-// use App\Http\Requests\StoreLocationCategoryRequest;
-// use App\Http\Requests\UpdateLocationCategoryRequest;
 
 class LocationCategoryController extends Controller
 {
