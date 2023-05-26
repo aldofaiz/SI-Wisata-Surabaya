@@ -59,10 +59,10 @@ class LocationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Location $id)
+    public function show(String $id)
     {
         //
-        $location = Location::find($id);
+        $location = Location::findOrFail($id);
         return response()->json($location);
     }
 
@@ -77,25 +77,29 @@ class LocationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Location $id)
+    public function update(Request $request, String $id)
     {
         //
         $this->validate($request,[
-            'category_id' => 'required',
-            'name' => 'required',
+            'location_category_id' => 'required',
+            'location_name' => 'required',
             'address' => 'required',
             'description' => 'required',
             'banner' => 'required',
             'image' => 'required',
+            'image2' => 'required',
+            'image3' => 'required',
         ]);
 
         $location = Location::find($id);
-        $location->category_id = $request->category_id;
-        $location->name = $request->name;
+        $location->location_category_id = $request->location_category_id;
+        $location->location_name = $request->location_name;
         $location->address = $request->address;
         $location->description = $request->description;
         $location->banner = $request->banner;
         $location->image = $request->image;
+        $location->image2 = $request->image2;
+        $location->image3 = $request->image3;
         $location->save();
         return response()->json($location);
     }
@@ -103,7 +107,7 @@ class LocationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Location $id)
+    public function destroy(String $id)
     {
         //
         $location = Location::find($id);

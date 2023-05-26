@@ -48,7 +48,7 @@ class ReviewController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Review $id)
+    public function show(String $id)
     {
         //
         $review = Review::find($id);
@@ -66,7 +66,7 @@ class ReviewController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Review $id)
+    public function update(Request $request, String $id)
     {
         //
         $this->validate($request,[
@@ -86,7 +86,7 @@ class ReviewController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Review $id)
+    public function destroy(String $id)
     {
         //
         $review = Review::find($id);
